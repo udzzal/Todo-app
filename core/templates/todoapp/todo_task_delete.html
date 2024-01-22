@@ -1,0 +1,7 @@
+<h1>Are you sure to delete the task {{tasks}}</h1>
+
+<a href="{% url 'todo_home'%}"><h2>goback</h2></a>
+<form action=""method="POST">
+    {% csrf_token %}
+    <input type="submit" value="Delete">
+</form>

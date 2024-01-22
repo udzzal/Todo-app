@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titel %}Todo details{% endblock titel %}
+
+{% block content %}
+
+
+<div class="card " style="width:50%;">
+    <div class="card-body ">
+      <h5 class="card-title">{{details.titel}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Created at {{details.created_date}}</h6>
+      <p class="card-text"> {{details.description }}</p>
+      <a href="#" class="card-link">this is todo number {{details.id}}</a>
+      <a href="/" class="card-link">goback</a>
+    </div>
+  </div>
+
+{% endblock content %}
+
+
+
+

@@ -1,0 +1,9 @@
+<h1>this is create form page </h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="submit">
+    <button><a href="{% url 'todo_home'%}">goback</a></button>
+</form>
+

@@ -1,0 +1,37 @@
+   <h1> MY todo app total task {{count}}</h1>
+
+   <h1>Login required for task</h1>
+
+
+   <div>
+    <a href="{% url 'mylogout'%}">logout</a>
+        {% if request.user.is_authenticated %}
+        <h2>{{request.user}}</h2>
+        {% else %}
+        <h1><a href="{% url 'mylogin'%}">login </a></h1>
+        {% endif %}
+
+        <form action="" method="GET">
+            <input type="text" name="sarch-area">
+            <input type="submit" value="sarch">
+        </form>
+        
+    <table>
+        <tr>
+            <th>item</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td><p>Created by :{{request.user}}</p></td>
+            <td>{{task.titel}}</td>
+            <td><a href="{% url 'todo_details' task.id%}">views</a></td>
+            <td><a href="{% url 'todo_update' task.id%}">update</a></td>
+            <td><a href="{% url 'todo_delete' task.id%}">delete</a></td>
+        </tr>
+        {% empty %}
+        <td>Login to show Your todo task </td>
+        {% endfor %}
+    </table> 
+
+    <h1><a href="{% url 'create_todo' %}" > create todo </a></h1>
+   </div> 
